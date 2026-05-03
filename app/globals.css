@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg:             #080B12;
+  --color-surface:        #0D1220;
+  --color-elevated:       #131929;
+  --color-border:         #1E2D47;
+  --color-cyan:           #00D4FF;
+  --color-violet:         #7B61FF;
+  --color-green:          #00FF88;
+  --color-danger:         #FF4C6A;
+  --color-text:           #F0F4FF;
+  --color-text-secondary: #8892A4;
+  --color-text-muted:     #4A5568;
+
+  /* Fonts */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-body:    "Inter", sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Background images (gradients) */
+  --background-image-grad-primary: linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%);
+  --background-image-grad-hero:    linear-gradient(135deg, #00D4FF, #7B61FF, #00FF88);
+  --background-image-grad-surface: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(123,97,255,0.05));
+  --background-image-grad-card:    linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,97,255,0.08));
+
+  /* Box shadows */
+  --shadow-glow-cyan:   0 0 30px rgba(0,212,255,0.3);
+  --shadow-glow-violet: 0 0 30px rgba(123,97,255,0.3);
+  --shadow-glow-sm:     0 0 16px rgba(0,212,255,0.2);
+  --shadow-card:        0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #080B12;
+  color: #F0F4FF;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  line-height: 1.7;
+}
+
+/* Hide default cursor on interactive elements too */
+a, button, [role="button"] { cursor: none; }
+
+/* ── Custom Cursor ── */
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background: #00D4FF;
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s;
+}
+body.hovering .cursor-dot { width: 18px; height: 18px; background: #7B61FF; }
+body.hovering .cursor-ring { width: 52px; height: 52px; border-color: rgba(123, 97, 255, 0.4); }
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF, #7B61FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-anim {
+  background: linear-gradient(90deg, #00D4FF, #7B61FF, #00FF88, #00D4FF);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: grad-shift 5s linear infinite;
+}
+
+@keyframes grad-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,212,255,0.4); }
+  50%       { box-shadow: 0 0 24px rgba(0,212,255,0.8); }
+}
+
+/* ── Gradient Utilities (ensure Tailwind picks them up) ── */
+.bg-grad-primary {
+  background: linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%);
+}
+.bg-grad-hero {
+  background: linear-gradient(135deg, #00D4FF, #7B61FF, #00FF88);
+}
+.bg-grad-surface {
+  background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(123,97,255,0.05));
+}
+.bg-grad-card {
+  background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,97,255,0.08));
+}
+
+/* ── Scroll-bar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080B12; }
+::-webkit-scrollbar-thumb { background: #1E2D47; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00D4FF; }
+
+/* ── Selection ── */
+::selection { background: rgba(0,212,255,0.2); color: #F0F4FF; }
