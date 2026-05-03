@@ -70,7 +70,7 @@ const cardVariants = {
   hidden:  { opacity: 0, y: 32 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.09 },
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const, delay: i * 0.09 },
   }),
 };
 
@@ -84,7 +84,7 @@ export default function PortfolioPreview() {
           <div className="max-w-xl">
             <motion.p
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
               className="inline-flex items-center gap-2 font-mono text-xs font-medium tracking-[0.15em] uppercase text-[#00D4FF] mb-4"
             >
               <span className="block w-5 h-px bg-[#00D4FF]" />
@@ -92,7 +92,7 @@ export default function PortfolioPreview() {
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 }}
               className="font-heading font-bold text-3xl md:text-4xl text-[#F0F4FF] leading-tight tracking-tight"
               id="portfolio-heading"
             >

@@ -23,7 +23,7 @@ export default function CTASection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const, delay: i * 0.1 }}
                 className="text-center"
               >
                 <div className="font-display font-extrabold gradient-text leading-none mb-2"
@@ -44,7 +44,7 @@ export default function CTASection() {
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] as const }}
             className="relative rounded-3xl border border-border overflow-hidden px-8 py-20 text-center"
             style={{
               background: "linear-gradient(135deg, rgba(0,212,255,0.07) 0%, rgba(123,97,255,0.07) 100%)",
@@ -83,7 +83,7 @@ export default function CTASection() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const, delay: 0.2 }}
                 className="font-heading font-bold text-text leading-tight tracking-tight mb-5"
                 style={{ fontSize: "clamp(1.9rem, 4.5vw, 3rem)" }}
               >

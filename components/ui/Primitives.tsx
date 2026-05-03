@@ -17,7 +17,7 @@ export function SectionHeader({ label, title, description, align = "center" }: S
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
       className={`mb-16 max-w-2xl ${isCenter ? "mx-auto text-center" : ""}`}
     >
       <p className="inline-flex items-center gap-2 font-mono text-xs font-medium tracking-[0.15em] uppercase text-[#00D4FF] mb-4">

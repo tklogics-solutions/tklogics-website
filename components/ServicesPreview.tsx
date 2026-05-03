@@ -72,7 +72,7 @@ const cardVariants = {
   hidden:  { opacity: 0, y: 32 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 },
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const, delay: i * 0.1 },
   }),
 };
 

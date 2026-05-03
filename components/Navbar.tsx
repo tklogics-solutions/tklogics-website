@@ -41,7 +41,7 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
         className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-300"
         style={scrolled ? {
           background: "rgba(8,11,18,0.88)",
@@ -129,7 +129,7 @@ export default function Navbar() {
                 key={link.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.07, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ delay: i * 0.07, duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
               >
                 <Link
                   href={link.href}
@@ -143,7 +143,7 @@ export default function Navbar() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.32, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.32, duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
             >
               <Link
                 href="/contact"

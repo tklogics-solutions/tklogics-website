@@ -23,6 +23,7 @@ export default function CustomCursor() {
 
     let animId: number;
     function followRing() {
+      if (!ring) return;
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
       ring.style.left = rx + "px";
