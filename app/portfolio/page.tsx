@@ -82,7 +82,7 @@ const filters = ["All", "Web", "Mobile", "QA", "Cloud", "DevOps"];
 
 const cardVariants = {
   hidden:  { opacity: 0, y: 28, scale: 0.97 },
-  visible: (i: number) => ({ opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.16,1,0.3,1], delay: i * 0.07 } }),
+  visible: (i: number) => ({ opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const, delay: i * 0.07 } }),
   exit:    { opacity: 0, scale: 0.95, transition: { duration: 0.25 } },
 };
 
@@ -104,7 +104,7 @@ export default function PortfolioPage() {
             className="inline-flex items-center gap-2 font-mono text-xs font-medium tracking-[.15em] uppercase text-[#00D4FF] mb-5">
             <span className="block w-5 h-px bg-[#00D4FF]"/>Our Work<span className="block w-5 h-px bg-[#00D4FF]"/>
           </motion.p>
-          <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.75,ease:[0.16,1,0.3,1],delay:.1}}
+          <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.75,ease:[0.16,1,0.3,1] as const,delay:.1}}
             className="font-display font-extrabold text-[#F0F4FF] leading-tight tracking-[-0.03em] mb-5"
             style={{fontSize:"clamp(2.2rem,5vw,3.5rem)"}}>
             Projects That <span className="gradient-text">Define Us</span>
@@ -213,7 +213,7 @@ export default function PortfolioPage() {
       <section className="pb-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
           <motion.div initial={{opacity:0,y:32}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
-            transition={{duration:.75,ease:[0.16,1,0.3,1]}}
+            transition={{duration:.75,ease:[0.16,1,0.3,1] as const}}
             className="rounded-2xl border border-[#1E2D47] p-12 text-center"
             style={{background:"linear-gradient(135deg,rgba(0,212,255,0.06),rgba(123,97,255,0.06))"}}>
             <h2 className="font-heading font-bold text-[#F0F4FF] text-3xl mb-4">
