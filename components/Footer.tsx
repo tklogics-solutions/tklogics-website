@@ -52,7 +52,7 @@ export default function Footer() {
                 <LogoIcon />
               </div>
               <span className="font-display font-bold text-[1.1rem] text-[#F0F4FF]">
-                TK<span className="text-[#00D4FF]">Logics</span>
+                Tk<span className="text-[#00D4FF]">logics</span>
               </span>
             </Link>
             <p className="text-[#8892A4] text-sm leading-relaxed max-w-[260px] mb-6">
