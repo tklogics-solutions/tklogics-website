@@ -2,14 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const LogoIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-    <line x1="12" y1="22" x2="12" y2="15.5" />
-    <polyline points="22 8.5 12 15.5 2 8.5" />
-  </svg>
-);
+import Logo from "@/components/ui/Logo";
 
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,17 +37,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4" aria-label="Tklogics">
-              <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: "linear-gradient(135deg,#00D4FF,#7B61FF)", boxShadow: "0 0 16px rgba(0,212,255,0.2)" }}
-              >
-                <LogoIcon />
-              </div>
-              <span className="font-display font-bold text-[1.1rem] text-[#F0F4FF]">
-                Tk<span className="text-[#00D4FF]">logics</span>
-              </span>
-            </Link>
+            <Logo className="mb-4" />
             <p className="text-[#8892A4] text-sm leading-relaxed max-w-[260px] mb-6">
               Enterprise software solutions for companies that refuse to compromise. Build fast. Scale smart.
             </p>

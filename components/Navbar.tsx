@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "@/components/ui/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -11,14 +12,6 @@ const links = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
-
-const LogoIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-    <line x1="12" y1="22" x2="12" y2="15.5" />
-    <polyline points="22 8.5 12 15.5 2 8.5" />
-  </svg>
-);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,17 +45,7 @@ export default function Navbar() {
       >
         <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Tklogics">
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(135deg,#00D4FF,#7B61FF)", boxShadow: "0 0 16px rgba(0,212,255,0.2)" }}
-            >
-              <LogoIcon />
-            </div>
-            <span className="font-display font-bold text-[1.1rem] text-[#F0F4FF]">
-              Tk<span className="text-[#00D4FF]">logics</span>
-            </span>
-          </Link>
+          <Logo />
 
           {/* Desktop Links */}
           <ul className="hidden md:flex items-center gap-9">
